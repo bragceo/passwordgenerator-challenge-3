@@ -1,76 +1,57 @@
 // Assignment Code
+//Please note I used const and let instead of var for variable declarations.
+//I also asked our instructor Diego and he said it was OK.
+// Define character sets
+const numericCharacters = '0123456789';
+const uppercaseCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz';
+const specialCharacters = '@%+\/\'!#$^?:,)(}{][~`.-_';
+
 function generatePassword() {
-  var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  var uppercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  var lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-  var possibleCharacters = [];
+  // Get input and validate
+  let numberOfCharacters = prompt("How many characters do you want in your password? Choose between 8-128 characters.");
+  if (numberOfCharacters < 8 || numberOfCharacters > 128 || isNaN(numberOfCharacters)) {
+    return "Please choose a valid number of characters.";
+  }
+  alert(`Your password will be ${numberOfCharacters} characters long.`);
 
- // get input and validate
- numberOfCharacters = prompt("How many characters do you want in your password? Choose between 8-128 characters.");
- if (numberOfCharacters < 8 || numberOfCharacters > 128) {
-  return "Please choose a valid number of characters.";
-} else if (isNaN(numberOfCharacters)) {
-  numberOfCharacters = prompt("Please enter a valid number.");
-}
-else {
-  alert("Your password will be " + numberOfCharacters + " characters long.");
-  
-}
+  // Ask for character types
+  let hasLowercase = confirm("Do you want lowercase characters?");
+  let hasUppercase = confirm("Do you want uppercase characters?");
+  let hasNumbers = confirm("Do you want to use numbers?");
+  let hasSpecial = confirm("Do you want special characters?");
 
-hasLowercase = confirm("Do you want lowercase characters?");
-  if (hasLowercase) {
-    var turnToLowercase = alert("Your password will have lowercase characters.");
-  }
-  else {
-    alert("Your password will NOT have lowercase characters.");
-  }
-
-  hasUppercase = confirm("Do you want uppercase characters?");
-  if (hasUppercase) {
-    alert("Your password will have uppercase characters.");
-  }
-  else {
-    alert("Your password will NOT have uppercase characters.");
-  }
-
-  hasNumbers = confirm("Do you want to use numbers?");
-  if (hasNumbers) {
-    alert("Your password will have numbers.");
-  }
-  else {
-    alert("Your password will NOT have numbers.");
-  }
-
-  hasSpecial = confirm("Do you want special characters?");
-  if (hasSpecial) {
-    alert("Your password will have special characters.");
-  }
-  else {
-    alert("Your password will NOT have special characters.");
-  }
-
-  if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
+  // Check if at least one character type was selected
+  if (!hasLowercase && !hasUppercase && !hasNumbers && !hasSpecial) {
     return "Please select at least one character type.";
-  };
+  }
 
+  // Concatenate selected character sets
+  let possibleCharacters = '';
+  if (hasLowercase) possibleCharacters += lowercaseCharacters;
+  if (hasUppercase) possibleCharacters += uppercaseCharacters;
+  if (hasNumbers) possibleCharacters += numericCharacters;
+  if (hasSpecial) possibleCharacters += specialCharacters;
 
+  // Generate password
+  let finalPassword = '';
+  for (let i = 0; i < numberOfCharacters; i++) {
+    let rng = Math.floor(Math.random() * possibleCharacters.length);
+    finalPassword += possibleCharacters[rng];
+  }
+  return finalPassword;
+};
 
-
-
-var generateBtn = document.querySelector("#generate");
-
-var password=document.getElementById("password");
-console.log(password);
+// Get reference to the #generate element
+const generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
