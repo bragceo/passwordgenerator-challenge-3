@@ -6,10 +6,57 @@ function generatePassword() {
   var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
   var possibleCharacters = [];
 
-  console.log(numericCharacters);
-
-  // get input and validate
+ // get input and validate
+ numberOfCharacters = prompt("How many characters do you want in your password? Choose between 8-128 characters.");
+ if (numberOfCharacters < 8 || numberOfCharacters > 128) {
+  return "Please choose a valid number of characters.";
+} else if (isNaN(numberOfCharacters)) {
+  numberOfCharacters = prompt("Please enter a valid number.");
+}
+else {
+  alert("Your password will be " + numberOfCharacters + " characters long.");
   
+}
+
+hasLowercase = confirm("Do you want lowercase characters?");
+  if (hasLowercase) {
+    var turnToLowercase = alert("Your password will have lowercase characters.");
+  }
+  else {
+    alert("Your password will NOT have lowercase characters.");
+  }
+
+  hasUppercase = confirm("Do you want uppercase characters?");
+  if (hasUppercase) {
+    alert("Your password will have uppercase characters.");
+  }
+  else {
+    alert("Your password will NOT have uppercase characters.");
+  }
+
+  hasNumbers = confirm("Do you want to use numbers?");
+  if (hasNumbers) {
+    alert("Your password will have numbers.");
+  }
+  else {
+    alert("Your password will NOT have numbers.");
+  }
+
+  hasSpecial = confirm("Do you want special characters?");
+  if (hasSpecial) {
+    alert("Your password will have special characters.");
+  }
+  else {
+    alert("Your password will NOT have special characters.");
+  }
+
+  if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
+    return "Please select at least one character type.";
+  };
+
+
+
+
 
 var generateBtn = document.querySelector("#generate");
 
