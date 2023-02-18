@@ -42,19 +42,4 @@ THEN the password is either displayed in an alert or written to the page
 https://bragceo.github.io/passwordgenerator-challenge-3
 
 
-<img width="1440" alt="Screenshot 2023-02-17 at 5 41 50 PM" src="https://user-images.githubusercontent.com/119948453/219824411-0b57cb9c-4ffe-474a-bdd0-2085b3c32663.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 41 56 PM" src="https://user-images.githubusercontent.com/119948453/219824424-b1c6d443-b1f5-4626-b4f2-2dad0f7d9a46.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 06 PM" src="https://user-images.githubusercontent.com/119948453/219824434-d24dfcb2-40c2-4f96-9462-8175b6936353.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 10 PM" src="https://user-images.githubusercontent.com/119948453/219824456-748beddd-7752-4e9f-82fe-6de09664e2bd.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 13 PM" src="https://user-images.githubusercontent.com/119948453/219824465-ae533057-3b4c-42e2-b0e5-a7e2f9e410a0.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 17 PM" src="https://user-images.githubusercontent.com/119948453/219824468-ae639ee9-0bd7-4354-9cfd-abd194fe4146.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 21 PM" src="https://user-images.githubusercontent.com/119948453/219824483-673df6b8-4bc9-4d01-9f1d-f4c5bc84d1c8.png">
-
-<img width="1440" alt="Screenshot 2023-02-17 at 5 42 24 PM" src="https://user-images.githubusercontent.com/119948453/219824498-b173367e-39b1-4b96-8d8e-5a2d57594393.png">
 
